@@ -22,9 +22,9 @@ The four adjacent digits in the 1000-digit number that have the greatest product
 05886116467109405077541002256983155200055935729725
 71636269561882670428252483600823257530420752963450
 
-Find the thirteen adjacent digits in the 1000-digit number that have the greatest product. What is the value of this product?
+Find the thirteen adjacent digits in the 1000-digit number that have the greatest product.
+What is the value of this product?
 """
-import pandas as pd
 
 digits = "7316717653133062491922511967442657474235534919493496983520312774506326239578318016984801869478851843858615" \
          "6078911294949545950173795833195285320880551112540698747158523863050715693290963295227443043557668966489504" \
@@ -37,13 +37,28 @@ digits = "7316717653133062491922511967442657474235534919493496983520312774506326
          "8884580156166097919133875499200524063689912560717606058861164671094050775410022569831552000559357297257163" \
          "6269561882670428252483600823257530420752963450"
 
-num_digits = 4
+num_digits = 13
 biggest = 0
+
+
+def digimult(seq):
+    if '0' in seq:
+        return 0
+    else:
+        total = 1
+        while len(seq) > 0:
+            total *= int(seq.pop())
+        return total
+
+largest_product = 0
 for nums in range(0, len(digits) - num_digits + 1):
     word = digits[nums:nums + num_digits]
     b = []
     a = 0
     while a < len(word):
         b.append(word[a])
-        print(b)
         a += 1
+    product = digimult(b)
+    if product > largest_product:
+        largest_product = product
+print(largest_product)
