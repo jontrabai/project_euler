@@ -14,6 +14,7 @@ that are less than 1000
 # Function factors
 # ============================================================================
 
+
 def factors(xfactor=3, yfactor=5, limit=1000):
     """
     return a list containing the factors of xfactor OR yfactor
@@ -24,9 +25,6 @@ def factors(xfactor=3, yfactor=5, limit=1000):
             numbers.append(number)
 
     return numbers
-
-
-
 
 
 # %%==========================================================================

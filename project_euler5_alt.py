@@ -43,15 +43,15 @@ def prime_gen(size_limit):
     generate prime number sequence up to n
     using the sieve of Eratosthenes
     """
-    numbers = list(np.arange(2, size_limit + 1))
+    nums = list(np.arange(2, size_limit + 1))
     composites = []
     index = 0
-    while index < len(numbers):
-        for iterator in range(len(numbers)):
-            if numbers[index] * numbers[iterator] in numbers:
-                composites.append(numbers[index] * numbers[iterator])
+    while index < len(nums):
+        for iterator in range(len(nums)):
+            if nums[index] * nums[iterator] in nums:
+                composites.append(nums[index] * nums[iterator])
         index += 1
-    return list(set(numbers) - set(composites))
+    return list(set(nums) - set(composites))
 
 k = 200
 N = 1
