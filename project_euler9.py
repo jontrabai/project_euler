@@ -22,7 +22,7 @@ for n in range(start, stop):
         b = 2 * m * n
         c = m ** 2 + n ** 2
         if (a ** 2 + b ** 2 == c ** 2) and (a < b):
-            if (b < c):
+            if b < c:
                 if sqrt(n ** 2 + m ** 2) % floor(sqrt(n ** 2 + m ** 2)) == 0:
                     trips.append([n, m, int(sqrt(n ** 2 + m ** 2))])
 trips.sort()
@@ -33,9 +33,9 @@ df['c_sqr'] = df['c'] ** 2
 df['sum_abc'] = df['a'] + df['b'] + df['c']
 print(df.head())
 
-sum = 1000
-for a in range(1, int(sum / 3)):
-    for b in range(a + 1, int(sum / 2)):
-        c = sum - a - b
+my_sum = 1000
+for a in range(1, int(my_sum / 3)):
+    for b in range(a + 1, int(my_sum / 2)):
+        c = my_sum - a - b
         if (a * a + b * b) == c * c:
             print(a, b, c)
