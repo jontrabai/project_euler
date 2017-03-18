@@ -18,9 +18,9 @@ def make_seq(n=0):
 
 largest = 0
 collatz_start = 0
-for i in range(1000000):
+for i in range(13):
     seq_length = len(make_seq(i))
     if seq_length >= largest:
         largest = seq_length
         collatz_start = i
-print(largest)
+print(largest, collatz_start)
