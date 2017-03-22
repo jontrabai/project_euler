@@ -12,10 +12,10 @@ def sum_sqr_dig(n=1):
     nstr = str(n)
     nl = []
     result = 0
-    for i in range(len(nstr)):
-        nl.append(int(nstr[i]) ** 2)
-    for i in range(len(nl)):
-        result += nl[i]
+    for itx in range(int(len(nstr))):
+        nl.append(int(nstr[itx]) ** 2)
+    for itx in range(len(nl)):
+        result += nl[itx]
     return result
 
 
